@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
   <!-- header section -->
   <header class="header">
     <!-- max width of page -->
@@ -54,20 +53,25 @@
         </li>
       </ul>
     </div>
+
   </header>
 
   <!-- main section - content of the main page -->
   <main>
-
     <!-- headline -->
     <section class="headline">
       <div class="headline-wrapper">
         <h1>Efektywne rozwiazania dla waszego biznesu</h1>
         <!-- call to action button -->
-        <button type="button" class="button button-main">Zamow usluge</button>
+        <button data-modal-open type="button" class="button button-main">Zamow usluge</button>
+        <div class="modal is-hidden" data-modal>
+          <div class="box">
+            <button data-modal-close>X</button>
+          </div>
+        </div>
       </div>
-
     </section>
+
     <!-- max width of page -->
     <div class="container">
       <!-- 4 columns section -->
@@ -123,9 +127,20 @@
     <section class="activities">
       <h2>Czym sie zajmujemy</h2>
       <div class="activities-images">
-        <img src="images/computer.jpg" alt="computer 1" width="370" height="294">
-        <img src="images/computer-2.jpg" alt="computer 2" width="370" height="294">
-        <img src="images/computer-3.jpg" alt="computer 3" width="370" height="294">
+        <figure>
+          <img src="images/computer.jpg" alt="computer 1" width="370" height="294">
+          <figcaption>desktop apps</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/computer-2.jpg" alt="computer 2" width="370" height="294">
+          <figcaption>mobile apps</figcaption>
+        </figure>
+        <figure>
+          <img src="images/computer-3.jpg" alt="computer 3" width="370" height="294">
+          <figcaption>design solutions</figcaption>
+        </figure>
+
       </div>
 
     </section>
@@ -350,5 +365,7 @@
     </div>
 
   </footer>
+  <!-- modal window script -->
+  <script src="./js/modal.js"></script>
 </body>
 </html>
