@@ -12,11 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
     rel="stylesheet">
 
+
   <!-- normalize minimized css  -->
   <link rel="stylesheet" href="css/modern-normalize.min.css">
 
   <!-- styles CSS -->
   <link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
   <!-- header section -->
@@ -62,15 +65,26 @@
     <section class="headline">
       <div class="headline-wrapper">
         <h1>Efektywne rozwiazania dla waszego biznesu</h1>
-        
+
         <!-- call to action button -->
-        <button data-modal-open type="button" class="button button-main">Zamow usluge</button>
-        <div class="modal is-hidden" data-modal>
-          <div class="box rotate-y">
-            <button data-modal-close type="button" class="button button-close">&#215;</button>
+        <button onclick="document.getElementById('modal-1').style.display='block'" type="button"
+          class="button button-main" data-modal-open>Zamow usluge</button>
+
+        <!-- modal hidden background  -->
+        <div id="modal-1" class="modal is-hidden" data-modal>
+
+          <!-- modal content -->
+          <div class="modal-content modal-animate-zoom">
+            <div>
+              <button onclick="document.getElementById('modal-1').style.display='none'" class="button button-close"
+                data-modal-close type="button" class="button button-close">&#215;</button>
+            </div>
           </div>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- max width of page -->

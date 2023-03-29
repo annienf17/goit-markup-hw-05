@@ -584,11 +584,7 @@ section h2 {
     background-color: var(--color-blue);
 }
 /* modal window */
-.modal-container {
-    display: flex;
-    justify-content: center;
-    position: relative;  
-}
+
 
 .modal {
     cursor: not-allowed;
@@ -604,24 +600,22 @@ section h2 {
       
   }
   /* modal window white box */
-  .box {
-    position: absolute;
+
+  .modal-content {
     padding: 2rem 1rem;
     box-sizing: border-box;
     width: 528px;
     height: 581px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
     background-color: var(--color-white);
     cursor: initial;
     margin: auto;
     box-shadow: 0px 1px 3px rgba(0 0 0 / .12), 0px 1px 1px rgba(0 0 0 / .14), 0px 2px 1px rgba(0 0 0 / .2);
     border-radius: 4px;
-    
+    position: relative;
   }
   /* button close */
-  .box button {
+  .modal-content button {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -637,12 +631,28 @@ section h2 {
     justify-content: center;
     align-items: center;
   }
- 
 
+/* modal  animation */
+
+.modal-animate-zoom {
+    -webkit-animation: animatezoom 1s ease-in-out backwards;
+    animation: animatezoom 1s ease-in-out backwards;
+}
+@keyframes animatezoom {
+    0% { 
+        -webkit-transform: scale(0, 0);
+        transform:scale(0, 0)
+    } 
+   100% {
+         -webkit-transform: scale(1, 1);
+         transform: scale(1, 1);
+    }
+}
+/* hide modal */
 .is-hidden {
     pointer-events: none;
     visibility: hidden;
     opacity: 0; 
     transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg) skew(40deg, 40deg);
-    z-index: 1000;
+    z-index: 10;
 }
