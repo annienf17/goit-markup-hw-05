@@ -48,6 +48,11 @@ body * {
 h2 {
     margin-bottom: 50px;
 }
+ /* transition for all svg images */
+ path { 
+    transition: fill .25s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
 /* header style */
 .header {
     border-bottom: 1px solid var(--color-border);
@@ -169,18 +174,28 @@ color: var(--color-blue);
 /* contact svg */
 .contact-item {
     display: flex;
-    align-items: center;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    align-items: center; 
 }
+
 .contact-item .icon {
     fill: var(--color2);
     margin-right: 10px;
  }
 
- .contact-item:hover {
-    --color2: var(--color-blue);
+ .contact-item .icon:hover {
+    --color2: var(--color-blue);  
  }
  
+ .contact-item:hover {
+    --color2: var(--color-blue);
+    transition: .25s cubic-bezier(0.4, 0, 0.2, 1); 
+ }
+ .contact-link:hover {
+    --color2: var(--color-blue);
+    transition: .25s cubic-bezier(0.4, 0, 0.2, 1); 
+ }
+
+
 /* buttons style */
  .button {
      border: none;
@@ -595,7 +610,9 @@ section h2 {
     box-sizing: border-box;
     width: 528px;
     height: 581px;
-    top: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--color-white);
     cursor: initial;
     margin: auto;
@@ -620,19 +637,7 @@ section h2 {
     justify-content: center;
     align-items: center;
   }
-  .box.rotate-y {
-  /*   transform: perspective(400px) rotateY(45deg); */
-  animation: rotateY 1500ms infinite alternate ease-in-out 1000ms;
-}
-@keyframes rotateY {
-    0% {
-      transform: perspective(500px) rotateY(-1deg);
-    }
-  
-    100% {
-      transform: perspective(500px) rotateY(1deg);
-    }
-  }
+ 
 
 .is-hidden {
     pointer-events: none;
