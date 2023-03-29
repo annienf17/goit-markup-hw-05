@@ -73,16 +73,14 @@ h2 {
 }
 .main-menu ul li {
   position: relative;
-  transition: .25s transform cubic-bezier(0.4, 0, 0.2, 1); 
 }
-.main-menu ul li:link a::after,
-.main-menu ul li:visited a::after {
-  transition: .25 transform cubic-bezier(0.4, 0, 0.2, 1); 
+/* transition for font hover */
+.main-menu ul li a:hover {
+    color: var(--color-blue);
+    transition: .25s cubic-bezier(0.4, 0, 0.2, 1); 
 }
-
-.main-menu ul li:hover a::after,
-.main-menu ul li:active a::after,
-.main-menu ul li:focus a::after {
+/* bottom line  */
+.main-menu ul li a:after {
     content:" ";
     position: absolute;
     background: var(--color-blue);
@@ -91,9 +89,16 @@ h2 {
     top: 46px;
     left: 0;
     bottom: 0;
+    /* hide bottom line when not hover */
+    opacity: 0;
+    transition: .25s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+/* show bottom line when hover */
+.main-menu ul li a:hover:after {
+    opacity: 1;
 }
 
-/* active page  */
+/* show bottom line when active page */
 .main-menu ul li .active::after {
     content:" ";
     position: absolute;
@@ -103,8 +108,10 @@ h2 {
     top: 46px;
     left: 0;
     bottom: 0;
+    opacity: 1;
 }
-.main-menu ul li .active{
+/* show color text when active page */
+.main-menu ul li .active {
     color: var(--color-blue);
 }
 /* horizontal aligning header and centered vertically */
@@ -561,14 +568,13 @@ section h2 {
 .footer-social-media li:hover {
     background-color: var(--color-blue);
 }
-
 /* modal window */
 .modal-container {
     display: flex;
     justify-content: center;
-    position: relative;
-   
+    position: relative;  
 }
+
 .modal {
     cursor: not-allowed;
       display: flex;
